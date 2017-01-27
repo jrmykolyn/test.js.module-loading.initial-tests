@@ -1,4 +1,4 @@
-define( [ './add' ], function( add ) {
+define( [ './_add' ], function( add ) {
     return {
         add: add
     };
