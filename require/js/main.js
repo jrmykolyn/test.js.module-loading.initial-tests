@@ -6,8 +6,8 @@ requirejs.config( {
 } );
 
 requirejs(
-    [ 'config/options', 'logger' ],
-    function( options, logger ) {
+    [ 'config/options', 'logger', 'math/math' ],
+    function( options, logger, math ) {
         console.log( options );
 
         logger.doLog( 'This is the log!' );
