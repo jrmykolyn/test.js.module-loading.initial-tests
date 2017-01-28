@@ -29,9 +29,15 @@ function sentence( str ) {
 
     return lower( str ).split( ' ' )
         .map( function( word, index ) {
-            return ( index === 0 ) ? ( upper( word.substring( 0, 1 ) ) + word.substring( 1 ) ) : word;
+            return ( index === 0 ) ? capitalize( word ) : word;
         } )
         .join( ' ' );
+}
+
+function capitalize( str ) {
+    if ( !utils.isString( str ) ) { return str; }
+
+    return ( upper( str.substring( 0, 1 ) ) + str.substring( 1 ) );
 }
 
 // Return public API.
@@ -39,5 +45,6 @@ module.exports = {
     upper: upper,
     lower: lower,
     title: title,
-    sentence: sentence
+    sentence: sentence,
+    capitalize: capitalize
 };
