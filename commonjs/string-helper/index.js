@@ -14,8 +14,19 @@ function lower( str ) {
     return str.toLowerCase();
 }
 
+function title( str ) {
+    if ( !utils.isString( str ) ) { return str; }
+
+    return str.split( ' ' )
+        .map( function( word ) {
+            return ( word.substring( 0, 1 ).toUpperCase() + word.substring( 1 ).toLowerCase() );
+        } )
+        .join( ' ' );
+}
+
 // Return public API.
 module.exports = {
     upper: upper,
-    lower: lower
+    lower: lower,
+    title: title
 };
