@@ -6,10 +6,14 @@ requirejs.config( {
 } );
 
 requirejs(
-    [ 'config/options', 'logger', 'math/math' ],
+    [ 'config/options', 'logger/logger', 'math/math' ],
     function( options, logger, math ) {
-        console.log( options );
+        logger.add( 'This is the first log item.' );
+        logger.add( 'This is the second log item.' );
+        logger.add( 'This is the third log item.' );
 
-        logger.doLog( 'This is the log!' );
+        var logs = logger.dump();
+
+        console.log( logs );
     }
 );
