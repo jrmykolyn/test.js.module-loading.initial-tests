@@ -1,16 +1,15 @@
+// Import local utilities.
+var utils = require( './_utils' );
+
 // Define private functions.
 function upper( str ) {
-    if ( typeof str !== 'string' ) {
-        return str;
-    }
+    if ( !utils.isString( str ) ) { return str; }
 
     return str.toUpperCase();
 }
 
 function lower( str ) {
-    if ( typeof str !== 'string' ) {
-        return str;
-    }
+    if ( !utils.isString( str ) ) { return str; }
 
     return str.toLowerCase();
 }
