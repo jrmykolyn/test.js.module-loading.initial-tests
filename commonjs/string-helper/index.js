@@ -24,9 +24,20 @@ function title( str ) {
         .join( ' ' );
 }
 
+function sentence( str ) {
+    if ( !utils.isString( str ) ) { return str; }
+
+    return lower( str ).split( ' ' )
+        .map( function( word, index ) {
+            return ( index === 0 ) ? ( upper( word.substring( 0, 1 ) ) + word.substring( 1 ) ) : word;
+        } )
+        .join( ' ' );
+}
+
 // Return public API.
 module.exports = {
     upper: upper,
     lower: lower,
-    title: title
+    title: title,
+    sentence: sentence
 };
