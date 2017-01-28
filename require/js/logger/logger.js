@@ -2,10 +2,6 @@ define( function() {
     var cache = [];
 
     // Define private functions
-    function doLog( msg ) {
-        console.log( msg );
-    }
-
     function addLog( msg ) {
         cache.push( buildLog( msg ) );
         return cache.length;
@@ -24,7 +20,6 @@ define( function() {
 
     // Return public API
     return {
-        doLog: doLog,
         add: addLog,
         dump: dumpLogs
     };
